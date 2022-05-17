@@ -57,9 +57,9 @@ function pageB(element, callback){
         console.log("playvedio" + index) ;
         var dfd = $.Deferred() ;
         var videoUrls = [
-            "./video/1.mp4",
-            "./video/3.mp4",
-            "./video/2.mp4"
+            "https://f.video.weibocdn.com/o0/hvfTx0hClx07W7ACKYdG0104120011Vj0E010.mp4?label=mp4_720p&template=1280x704.25.0&media_id=4770167411114027&tp=8x8A3El:YTkl0eM8&us=0&ori=1&bf=4&ot=h&lp=00001tKIgP&ps=mZ6WB&uid=8f8ZT3&ab=7397-g1,7165-g0,7332-g1,6377-g0,1192-g0,1258-g0,7598-g0,3601-g27&Expires=1652783715&ssig=xUJK%2F1EfeI&KID=unistore,video",
+            "https://f.video.weibocdn.com/o0/JP7sGLq4lx07W7AVnuk0010412001Cme0E010.mp4?label=mp4_720p&template=1280x704.25.0&media_id=4770168824594524&tp=8x8A3El:YTkl0eM8&us=0&ori=1&bf=4&ot=h&lp=00001tKIgP&ps=mZ6WB&uid=8f8ZT3&ab=7397-g1,7165-g0,7332-g1,6377-g0,1192-g0,1258-g0,7598-g0,3601-g27&Expires=1652783962&ssig=fJKldtXbVn&KID=unistore,video",
+            "https://f.video.weibocdn.com/o0/RlfdPBkClx07W7AU27f2010412001lET0E010.mp4?label=mp4_720p&template=1280x704.25.0&media_id=4770168749097034&tp=8x8A3El:YTkl0eM8&us=0&ori=1&bf=4&ot=h&lp=00001tKIgP&ps=mZ6WB&uid=8f8ZT3&ab=7397-g1,7165-g0,7332-g1,6377-g0,1192-g0,1258-g0,7598-g0,3601-g27&Expires=1652783962&ssig=8nuWthlzId&KID=unistore,video",
         ] ;
         var $video = $("<video preload='auto'></video>") ;
         $video.attr("src", videoUrls[index]) ;
