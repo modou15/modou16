@@ -1,0 +1,110 @@
+.page-c{
+    background-image: url(../images/c/page-c-bg.png);
+    z-index: 3;
+}
+
+.effect-in{
+    z-index: 15;
+    display: block;
+    opacity: 0;
+    -webkit-transform: scale(8);
+    -moz-transform: scale(8);
+    transform: scale(8);
+    -webkit-transform-origin: 58.5% 73.5%;
+    -moz-transform-origin: 58.5% 73.5%;
+    transform-origin: 58.5% 73.5%;
+    -webkit-animation: effectIn 5s ease-in-out forwards;
+    -moz-animation: effectIn 5s ease-in-out forwards;
+    animation: effectIn 5s ease-in-out forwards;
+}
+
+@keyframes effectIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes effectIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+}
+
+.page-c .window{
+    left: 8rem;
+}
+
+.page-c .window-left{
+    transform-origin: left;
+    transform: rotateY(60deg);
+    top: 0.03rem;
+}
+
+.page-c .window-right{
+    transform-origin: right;
+    transform: rotateY(-60deg);
+    top: 0.03rem;
+}
+
+.window-left.close, .window-right.close{
+    -webkit-animation: closeWindow 2s forwards;
+    -o-animation: closeWindow 2s forwards;
+    animation: closeWindow 2s forwards;
+}
+@keyframes closeWindow {
+    100%{
+        transform: none;
+        top: 0;
+    }
+}
+@-webkit-keyframes closeWindow {
+    100%{
+        -webkit-transform: none;
+        top: 0;
+    }
+}
+@-o-keyframes closeWindow {
+    100%{
+        -o-transform: none;
+        top: 0;
+    }
+}
+
+.window-scene-bg{
+    background-image: url(../images/c/window-scene-bg.png);
+    background-size: 100% 100%;
+    width: 2.26rem;
+    height: 1.3rem;
+    position: absolute;
+    bottom: 0.1rem;
+    z-index: -1;
+}
+
+.window-close-bg{
+    background-image: url(../images/c/window-close-bg.png);
+    background-size: 100% 100%;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0.1rem;
+    margin-left: -0.4rem;
+    opacity: 0;
+    z-index: 500;
+}
+
+.snow{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}

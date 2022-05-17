@@ -1,0 +1,260 @@
+.page-a{
+    background-image: url(../images/a/page-a-bg.png);
+    z-index: 5;
+}
+
+.effect-out{
+    -webkit-animation: effectOut 8s ease-in-out forwards;
+    -o-animation: effectOut 8s ease-in-out forwards;
+    animation: effectOut 8s ease-in-out forwards;
+    -webkit-transform-origin: 71% 72%;
+    -o-transform-origin: 71% 72%;
+    transform-origin: 71% 72%;
+}
+
+@keyframes effectOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(20);
+    }
+}
+@-webkit-keyframes effectOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        -webkit-transform: scale(20);
+        z-index: 0;
+    }
+}
+
+.tree {
+    width: 2.71rem;
+    height: 4.24rem;
+    z-index: 15;
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    background-image: url(../images/a/trees.png);
+    background-size: 200% 100%;
+    -webkit-animation: treeAnim 1s steps(2)infinite;
+    -o-animation: treeAnim 1s steps(2) infinite;
+    animation: treeAnim 1s steps(2) infinite;
+}
+
+@keyframes treeAnim {
+    0%{
+        background-position: 0 100%;
+    }
+    100%{
+        background-position: 200% 100%;
+    }
+}
+@-webkit-keyframes treeAnim {
+    0%{
+        background-position: 0 100%;
+    }
+    100%{
+        background-position: 100% 100%;
+    }
+}
+@-o-keyframes treeAnim {
+    0%{
+        background-position: 0 100%;
+    }
+    100%{
+        background-position: 100% 100%;
+    }
+}
+
+.moon{
+    background: #FCF0BC;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    box-shadow: 0 0 1.5rem #FCF0BC;
+    position: absolute;
+    left: 3.3rem;
+    top: .8rem;
+    -webkit-animation: nucleus 1s infinite linear alternate;
+    -o-animation: nucleus 1s infinite linear alternate;
+    animation: nucleus 1s infinite linear alternate;
+}
+
+@keyframes nucleus {
+    0%{
+        box-shadow: 0 0 0 transparent;
+    }
+    100%{
+        box-shadow: 0 0 1rem #FCF0BC;
+    }
+}
+@-webkit-keyframes nucleus {
+    0%{
+        -webkit-box-shadow: 0 0 0 transparent;
+    }
+    100%{
+        -webkit-box-shadow: 0 0 1rem #FCF0BC;
+    }
+}
+@-o-keyframes nucleus {
+    0%{
+        -o-box-shadow: 0 0 0 transparent;
+    }
+    100%{
+        -o-box-shadow: 0 0 1rem #FCF0BC;
+    }
+}
+
+.cloudy{
+    background: #60768D;
+    border-radius: 50%;
+    box-shadow: #60768D 1.2rem -0.2rem 0 -0.1rem,
+        #60768D 0.5rem -0.5rem,
+        #60768D 0.8rem 0.2rem,
+        #60768D 1.5rem 0.2rem 0 -0.2rem ;
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+    left: .5rem;
+    top: 1.8rem;
+    z-index: 5;
+    -webkit-animation: cloudy 5s ease-in-out infinite;
+    -o-animation: cloudy 5s ease-in-out infinite;
+    animation: cloudy 5s ease-in-out infinite;
+}
+
+@keyframes cloudy {
+    50%{
+        transform: translateY(-0.1rem);
+    }
+}
+@-webkit-keyframes cloudy {
+    50%{
+        -webkit-transform: translateY(-0.1rem);
+    }
+}
+@-o-keyframes cloudy {
+    50%{
+        -o-transform: translateY(-0.1rem);
+    }
+}
+
+.chs-boy{
+    width: 5rem;
+    height: 1.5rem;
+    position: absolute;
+    z-index: 3;
+    top: .1rem;
+    right: -3rem;
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    transform: scale(0.1);
+    background: url(../images/a/boy-sleigh-car.png) -300% 100%;
+    background-size: 400% 100%;
+}
+
+.chs-boy-deer{
+    -webkit-animation: chsBoyDeer 0.75s steps(3,end) infinite;
+    -o-animation: chsBoyDeer 0.75s steps(3,end) infinite;
+    animation: chsBoyDeer 0.75s steps(3,end) infinite;
+}
+
+@keyframes chsBoyDeer {
+    0%{
+        background-position: 0 100%;
+    }
+    100%{
+        background-position: -300% 100%;
+    }
+}
+
+.boy-stop-animate{
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.window{
+    width: 2.6rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 9.7rem;
+    top: 6.2rem;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.window-content{
+    transform-style: preserve-3d;
+    perspective: 500px;
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+}
+
+.window-bg{
+    width: 86%;
+    height: 92%;
+    position: absolute;
+    left: 50%;
+    margin-left: -43%;
+    bottom: 0;
+    background: url(../images/a/page-a-window-bg.png);
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+.window:before{
+    content: '';
+    background: url(../images/a/window-bottom.png);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 0.17rem;
+    display: block;
+    position: absolute;
+    bottom: 0.05rem;
+    z-index: 100;
+}
+
+.window:after{
+    content: '';
+    background: url(../images/a/window-bottom-shadow.png);
+    width: 100%;
+    height: 0.09rem;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background-size: 100% 100%;
+    z-index: 100;
+}
+
+.window-left, .window-right{
+    position: relative;
+    width: 1.17rem;
+    height: 1.3rem;
+    top: 0;
+    z-index: 110;
+    box-shadow: 0 0 0.15rem #FCF0BC ;
+    background-size: 100% 100%;
+}
+
+.window-left{
+    float: left;
+    background-image: url(../images/a/window-left.png);
+    border-top-left-radius: 0.1rem;
+}
+
+.window-right{
+    float: right;
+    background-image: url(../images/a/window-right.png);
+    border-top-right-radius: 0.1rem;
+}
+
