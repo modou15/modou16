@@ -1,160 +1,117 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>祝晴晴520快乐~~~</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/pageA.css"/>
+    <link rel="stylesheet" href="css/pageB.css"/>
+    <link rel="stylesheet" href="css/pageC.css"/>
+    <style>
+        .play-btn {
+            position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);background: coral;color: #f9dad8;z-index: 1000000;border-radius: 10px;padding: 20px;font-size: 12px;
+        }
+        .love-sentence {
+            font-weight: 600;
+            font-size: 28px;
+            font-family: "黑体";
+            color: #8c888b;
+            background: -webkit-linear-gradient(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+            -moz-linear-gradient(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+            -ms-linear-gradient(45deg, #70f7fe, #fbd7c6, #fdefac, #bfb5dd, #bed5f5);
+            color: transparent;
+            /*设置字体颜色透明*/
+            -webkit-background-clip: text;
+        }
+    </style>
+</head>
 
-<div class="page clearfix" index>
-    <div class="left">
-        <h1>Welcome to Xin YAO's blog </h1>
-        <small></small>
-        <hr>
-        <ul>
-            {% for post in paginator.posts %}
-              <li>
-                <h2>
-                  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                </h2>
-                <div class="label">
-                    <div class="label-card">
-                        <i class="fa fa-calendar"></i>{{ post.date | date: "%F" }}
-                    </div>
-                    <div class="label-card">
-                        {% if post.author %}<i class="fa fa-user"></i>{{ post.author }}
-                        {% endif %}
-                    </div>
-                    <div class="label-card">
-                        {% if page.meta %}<i class="fa fa-key"></i>{{ page.meta }}  {% endif %}
-                    </div>
-
-                    <div class="label-card">
-                    {% include category.html %}
-                    </div>
-
-                    <div class="label-card">
-                    {% include tag.html %}
-                    </div>
-                </div>
-                <div class="excerpt">
-                    {{post.excerpt}}
-                </div>
-                <div class="read-all">
-                    <a  href="{{ post.url | prepend: site.baseurl }}"><i class="fa fa-newspaper-o"></i>Read All</a>
-                </div>
-                <hr>
-              </li>
-            {% endfor %}
-        </ul>
-
-
-
-        <!-- Pagination links -->
-        <div class="pagination">
-          {% if paginator.previous_page %}
-            <a href="/index.html" class="previous"><i class="fa fa-angle-double-left"></i></a>
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous"><i class="fa fa-angle-left"></i></a>
-          {% else %}
-            <span class="previous disable"><i class="fa fa-angle-double-left"></i></span>
-            <span class="previous disable"><i class="fa fa-angle-left"></i></span>
-          {% endif %}
-          <span class="page_number ">{{ paginator.page }}/{{ paginator.total_pages }}</span>
-          {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path }}" class="next"><i class="fa fa-angle-right"></i></a>
-            <a href="{{ site.baseurl }}/page{{ paginator.total_pages }}" class="next"><i class="fa fa-angle-double-right"></i></a>
-          {% else %}
-            <span class="next disable"><i class="fa fa-angle-right"></i></span>
-            <span class="next disable"><i class="fa fa-angle-double-right"></i></span>
-          {% endif %}
-        </div>
+<body>
+<section class="container">
+    <div class="play-btn">播放音乐</div>
+    <div style="position: fixed;border: 5px solid #f9dad8;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index: 1000000;padding: 20px;font-size: 12px;background: white;border-radius: 10px;display: none;">
+        <div class="love-sentence">今天520，对你的爱，定一个坐标：东京5度，北纬20度，合成520度；<br/>对你的爱，定一个温度：华氏100度；<br/>对你的爱，定一个容度：心有多大，爱你多少；<br/>今生有晴晴相伴，是我一生的幸福！！！</div>
     </div>
-    <!-- <button class="anchor"><i class="fa fa-anchor"></i></button> -->
-    <div class="right">
-        <div class="wrap">
-            <div class="side">
-                <div>
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    Recent Posts
-                </div>
-                <ul class="content-ul" recent>
-                    {% for post in site.posts offset: 0 limit: 10  %}
-                        <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-                    {% endfor %}
-                </ul>
+    <section class="page-a bg-adaptive">
+        <figure class="moon"></figure>
+        <figure class="tree"></figure>
+        <figure class="cloudy"></figure>
+        <!--男孩-->
+        <div class="chs-boy chs-boy-deer"></div>
+        <!--窗户-->
+        <div class="window">
+            <div class="window-bg"></div>
+            <div class="window-content">
+                <div class="window-left"></div>
+                <div class="window-right"></div>
             </div>
-
-            <!-- Content -->
-            <div class="side ">
-                <div>
-                    <i class="fa fa-th-list"></i>
-                    Categories
-                </div>
-                <ul class="content-ul" cate>
-                    {% for category in site.categories %}
-                    <li>
-                        <a href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}" class="categories-list-item" cate="{{ category | first }}">
-                            <span class="name">
-                                {{ category | first }}
-                            </span>
-                            <span class="badge">{{ category | last | size }}</span>
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <!-- 其他div框放到这里 -->
-            <div class="side">
-                <div>
-                    <i class="fa fa-tags"></i>
-                    Tags
-                </div>
-                <div class="tags-cloud">
-                    {% assign first = site.tags.first %}
-                    {% assign max = first[1].size %}
-                    {% assign min = max %}
-                    {% for tag in site.tags offset:1 %}
-                      {% if tag[1].size > max %}
-                        {% assign max = tag[1].size %}
-                      {% elsif tag[1].size < min %}
-                        {% assign min = tag[1].size %}
-                      {% endif %}
-                    {% endfor %}
-
-                    {% if max == min %}
-                        {% assign diff = 1 %}
-                    {% else %}
-                        {% assign diff = max | minus: min %}
-                    {% endif %}
-
-                    {% for tag in site.tags %}
-                      {% assign temp = tag[1].size | minus: min | times: 36 | divided_by: diff %}
-                      {% assign base = temp | divided_by: 4 %}
-                      {% assign remain = temp | modulo: 4 %}
-                      {% if remain == 0 %}
-                        {% assign size = base | plus: 9 %}
-                      {% elsif remain == 1 or remain == 2 %}
-                        {% assign size = base | plus: 9 | append: '.5' %}
-                      {% else %}
-                        {% assign size = base | plus: 10 %}
-                      {% endif %}
-                      {% if remain == 0 or remain == 1 %}
-                        {% assign color = 9 | minus: base %}
-                      {% else %}
-                        {% assign color = 8 | minus: base %}
-                      {% endif %}
-                      <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag[0] }}" style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <!-- <div class="side">
-                <div>
-                    <i class="fa fa-external-link"></i>
-                    Links
-                </div>
-                <ul  class="content-ul">
-
-                </ul>
-            </div> -->
         </div>
-    </div>
-</div>
-<!-- <script src="{{ "/js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
-<!-- <script src="{{ "/js/pageContent.js " | prepend: site.baseurl }}" charset="utf-8"></script> -->
+    </section>
+    <section class="page-b bg-adaptive">
+        <figure class="cat"></figure>
+        <figure class="girl"></figure>
+        <figure class="christmas-boy-head"></figure>
+        <figure class="christmas-boy boy-walk"></figure>
+        <div id="carousel">
+            <figure id="spinner">
+                <figure>
+                    <img id="img0" src="./images/b/qixi-one.png" />
+                </figure>
+                <figure>
+                    <img id="img1" src="./images/b/qixi-three.png" />
+                </figure>
+                <figure>
+                    <img id="img2" src="./images/b/qixi-two.png" />
+                </figure>
+            </figure>
+        </div>
+    </section>
+    <section class="page-c bg-adaptive">
+        <figure class="moon"></figure>
+        <figure class="tree"></figure>
+        <figure class="cloudy"></figure>
+        <div class="window">
+            <div class="window-content" data-attr="red">
+                <div class="window-scene-bg"></div>
+                <div class="window-close-bg"></div>
+                <div class="window-left hover"></div>
+                <div class="window-right hover"></div>
+            </div>
+        </div>
+        <div class="snow">
+            <canvas id="snowflake"></canvas>
+        </div>
+
+    </section>
+</section>
+
+<select id="page">
+    <option value="page-a" selected="">1</option>
+    <option value="page-b">2</option>
+    <option value="page-c">3</option>
+</select>
+</body>
+
+<script src="./lib/jquery.js"></script>
+<script src="./lib/jquery.transit.js"></script>
+<script src="js/christmas.js"></script>
+<script src="js/observer.js"></script>
+<script src="js/pageA.js"></script>
+<script src="js/pageB.js"></script>
+<script src="js/pageC.js"></script>
+<script>
+    var config = {} ;
+
+    var docEl = document.documentElement ,
+        resizeEvt = "orientationchange" in window ? "orientationchange" : "resize" ,
+        recalc = function(){
+            config.clientWidth = docEl.clientWidth ;
+            config.clientHeight = config.clientWidth * (900 / 1440) ;
+            docEl.style.fontSize = 20 * (config.clientWidth / 320) + "px" ;
+            $(".container").css("height" , config.clientHeight + "px") ;
+        } ;
+    window.addEventListener(resizeEvt, recalc, false) ;
+    document.addEventListener("DOMContentLoaded", recalc, false) ;
+
+</script>
+</html>
